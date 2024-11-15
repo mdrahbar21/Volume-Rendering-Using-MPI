@@ -14,6 +14,9 @@
 2. Compile the code using <code>mpicxx -o executable_file_name solution.cpp</code>
 3. Execute the code giving appropriate arguments. For example,
    <code>mpirun -np 8 ./executable Isabel_1000x1000x200_float32.raw 2 2 2 0.5 opacity_TF.txt color_TF.txt</code>
+   <code>mpirun-np 16 --host csews16:8,csews19:8 --mca btl_tcp_if_include eno1 --mca btl tcp,self ./executable Isabel_1000x1000x200_float32.raw 2 2 2 0.5 opacity_TF.txt color_TF.txt</code>
+
+   Use --mca to run code on common network interface, if there are multiple network interfaces among the servers. In the above command, I am running on "eno1" interface.
 
 ---
 
